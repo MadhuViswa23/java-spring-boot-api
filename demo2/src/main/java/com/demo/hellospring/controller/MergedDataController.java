@@ -1,0 +1,25 @@
+package com.demo.hellospring.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.demo.hellospring.service.MergedDataService;
+
+@RestController
+@RequestMapping("/merged-data")
+public class MergedDataController {
+
+    @Autowired
+    private MergedDataService mergedDataService;
+
+    @GetMapping
+    public List<Object[]> getMergedData() {
+        return mergedDataService.getMergedData();
+    }
+}
+
+  
